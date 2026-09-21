@@ -1,0 +1,470 @@
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 12px;               /* largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #2a1e1b;        /* fond sombre du site */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c97b36, #9e5c28); /* effet cuivre/orangé */
+  border-radius: 10px;
+  border: 2px solid #2a1e1b;  /* petit contour sombre pour l’intégrer */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e0a65a, #b06a34); /* plus clair au hover */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c97b36 #2a1e1b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- POLICES --- */
+@font-face {
+  font-family: 'Mutiara Calligraphy';
+  src: url('fonts/Mutiara Calligraphy Font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neuropol X';
+  src: url('fonts/Neuropol X Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Neuropol X', sans-serif; /* texte normal par défaut */
+}
+
+body {
+  background: linear-gradient(to bottom, #3c2f2f, #5a3e36);
+  color: #f5e6d3;
+  line-height: 1.6;
+  font-family: 'Neuropol X', sans-serif;
+}
+
+/* --- HEADER --- */
+/* Conteneur du header */
+header {
+  background: rgba(30, 20, 15, 0.9);
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid #c97b36;
+
+  display: flex;              /* permet de mettre logo + titre sur une ligne */
+  align-items: center;        /* aligne verticalement */
+  justify-content: center;    /* centre le tout */
+  gap: 1rem;                  /* espace entre logo et titre */
+}
+
+/* Logo */
+/* --- HEADER --- */
+header {
+  background: rgba(30, 20, 15, 0.9);
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid #c97b36;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo fixé à gauche */
+.logo {
+  flex-shrink: 0; /* empêche le logo de se réduire */
+  margin-right: 2rem;
+}
+
+.logo img {
+  height: 175px;
+  width: auto;
+  border-radius: 15px;
+  border: 2px solid #c97b36;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Bloc titre + navigation */
+.header-content {
+  flex: 1; /* prend toute la place disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: left;   /* centre horizontalement */
+  justify-content: left;
+  text-align: left;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #f0d8a8;
+  letter-spacing: 2px;
+  font-family: 'Mutiara Calligraphy', cursive;
+  margin-bottom: 0.5rem;
+}
+.header-content .contact-info {
+  font-size: 1rem;
+  color: #d8c9b3;
+  margin-bottom: 0.5rem;
+  font-family: 'Neuropol X', sans-serif;
+  text-align: right;
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #f5e6d3;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Neuropol X', sans-serif;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #c97b36;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 90vh;
+  background: url('images/background.png') no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(60, 30, 15, 0.55);
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 6px #000;
+  font-family: 'Mutiara Calligraphy', cursive;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Neuropol X', sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background: #c97b36;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Neuropol X', sans-serif;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #9e5c28;
+}
+
+.hero h2,
+.hero p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px; /* évite que le texte s'étale trop large */
+}
+
+/* --- CONTENT SECTIONS --- */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f0d8a8;
+  font-family: 'Mutiara Calligraphy', cursive;
+}
+
+section p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  font-family: 'Neuropol X', sans-serif;
+}
+
+/* --- SERVICES --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #c97b36;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.service-card h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #f0d8a8;
+  font-family: 'Mutiara Calligraphy', cursive;
+}
+
+/* Container des offres */
+.offres {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap; /* Pour passer en colonne sur mobile */
+}
+
+/* Badges */
+.badge {
+  display: center;
+  margin: 0 2pc 1rem 2pc; /* centré au-dessus du titre */
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #d88a42; /* cuivre doux */
+  border: 2px dashed #d88a42; /* contour pointillé */
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+/* Cartes */
+.offer-card {
+  flex: 1 1 300px; /* Minimum 300px, grandit si espace */
+  max-width: 350px;
+  background: #1e1a17;
+  border: 1px solid #c97b36;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  color: #f5e6d3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* Titres des offres */
+.offer-card h4 {
+  font-family: 'Neuropol X', sans-serif;
+  margin-bottom: 1rem;
+  color: #e6b800;
+  text-align: center;
+}
+
+/* Listes */
+.offer-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+}
+
+.offer-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #2a1e1b;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 2px solid #c97b36;
+  color: #c7a17a;
+  font-family: 'Neuropol X', sans-serif;
+}
+
+
+/* --- ICONES ET ANIMATIONS --- */
+.service-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #c97b36; /* cuivre */
+  transition: transform 0.3s, color 0.3s;
+}
+
+.service-card:hover i {
+  transform: scale(1.2);
+  color: #e0a65a; /* cuivre plus clair au hover */
+}
+
+/* --- CONTACT BUTTON --- */
+.contact-btn {
+  background: none;
+  border: 2px dashed #c97b36;
+  color: #f5e6d3;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contact-btn:hover {
+  background: rgba(201, 123, 54, 0.15);
+  color: #e0a65a;
+  transform: scale(1.05);
+}
+
+/* --- FADE-IN SECTIONS --- */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- ICONES CUIVRÉES --- */
+.icon {
+  font-size: 2.5rem;
+  color: #c97b36; /* cuivre principal */
+  display: block;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Effet au survol */
+.service-card:hover .icon {
+  transform: scale(1.2);
+  color: #e0a65a; /* cuivre plus clair */
+}
+
+
+/* --- FOOTER LINK STYLING --- */
+.footer-link {
+  margin-top: 0.5rem;
+}
+
+.footer-link a {
+  color: #c97b36;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link a:hover {
+  color: #e0a65a;
+  text-decoration: underline;
+}
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form textarea {
+  padding: 0.8rem;
+  border: 2px solid #c97b36;
+  border-radius: 8px;
+  background: #2a1e1b;
+  color: #f5e6d3;
+  font-family: 'Neuropol X', sans-serif;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #e0a65a;
+  box-shadow: 0 0 8px rgba(201,123,54,0.5);
+}
+
+form button {
+  align-self: center;
+}
+
+/* --- INDEED BUTTON STYLING --- */
+.indeed-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto 0;   /* ← auto centre horizontalement */
+  padding: 0.8rem 1.5rem;
+  background: #9e5c28;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Neuropol X', sans-serif;
+  transition: background 0.3s, transform 0.3s;
+  gap: 0.5rem;
+}
+
+.indeed-btn:hover {
+  background: #9e5c28;
+  transform: translateY(-2px);
+}
+
+.indeed-icon {
+  font-size: 1.2rem;
+}
+
+.contact-alternative {
+  margin: 1.5rem 0 0.5rem;
+  font-style: italic;
+  color: #d8c9b3;
+  text-align: center; /* centrer le texte alternatif aussi */
+}
