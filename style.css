@@ -225,6 +225,39 @@ section p {
   font-family: 'Neuropol X', sans-serif;
 }
 
+.about-portrait {
+  margin: 2.5rem auto 0;
+  max-width: 240px;
+  text-align: center;
+}
+
+.about-portrait-frame {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 1rem;
+  border: 3px solid #c97b36;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(30, 20, 15, 0.45);
+}
+
+.about-portrait-frame img {
+  position: absolute;
+  width: 290px;
+  max-width: none;
+  height: auto;
+  top: calc(50% + 26px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-portrait figcaption {
+  color: #f0d8a8;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 /* --- SERVICES --- */
 .services-grid {
   display: grid;
