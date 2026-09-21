@@ -128,6 +128,10 @@ nav {
   margin-top: 0.5rem;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 nav a {
   color: #f5e6d3;
   margin: 0 1rem;
@@ -500,4 +504,133 @@ form button {
   font-style: italic;
   color: #d8c9b3;
   text-align: center; /* centrer le texte alternatif aussi */
+}
+
+/* --- RESPONSIVE NAVIGATION --- */
+@media (max-width: 700px) {
+  header {
+    padding: 1rem;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .header-content {
+    min-width: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  header h1 {
+    padding-right: 3.5rem;
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: 1px;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 0.65rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: 2px solid #c97b36;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #f5e6d3;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  nav {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(201, 123, 54, 0.5);
+  }
+
+  nav.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 0.65rem 0.25rem;
+  }
+
+  .hero {
+    min-height: 78vh;
+    height: auto;
+    padding: 5rem 1.25rem;
+  }
+
+  .hero h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.15;
+  }
+
+  section {
+    padding: 3rem 1.25rem;
+  }
+
+  section h3 {
+    font-size: 1.75rem;
+  }
+
+  section p {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .service-card,
+  .offer-card {
+    padding: 1.25rem;
+  }
+
+  .offer-card {
+    flex-basis: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
 }
