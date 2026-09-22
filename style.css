@@ -262,6 +262,32 @@ section p {
   line-height: 1.4;
 }
 
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-item {
+  padding: 1.5rem 1rem;
+  border: 1px solid #c97b36;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.why-item h4 {
+  margin-bottom: 0.75rem;
+  color: #f0d8a8;
+  font-family: 'Mutiara Calligraphy', cursive;
+  font-size: 1.35rem;
+}
+
+.why-item p {
+  font-size: 0.95rem;
+}
+
 /* --- SERVICES --- */
 .services-grid {
   display: grid;
@@ -341,6 +367,14 @@ section p {
   text-align: center;
 }
 
+.offer-price {
+  margin-bottom: 1rem;
+  color: #e0a65a;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Listes */
 .offer-card ul {
   margin: 1rem 0 0;
@@ -349,6 +383,48 @@ section p {
 
 .offer-card li {
   margin-bottom: 0.5rem;
+}
+
+.additional-pricing {
+  padding-top: 1rem;
+}
+
+.pricing-list {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  border: 1px solid #c97b36;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-list p {
+  margin: 0.5rem auto;
+}
+
+.quote-note {
+  margin-top: 1.25rem;
+  color: #f0d8a8;
+}
+
+.calendly-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  background: #c97b36;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.calendly-btn:hover {
+  background: #9e5c28;
+  transform: translateY(-2px);
 }
 
 /* --- FOOTER --- */
