@@ -105,8 +105,8 @@ header {
   flex: 1; /* prend toute la place disponible */
   display: flex;
   flex-direction: column;
-  align-items: left;   /* centre horizontalement */
-  justify-content: left;
+  align-items: flex-start;
+  justify-content: flex-start;
   text-align: left;
 }
 
@@ -332,8 +332,9 @@ section p {
 
 /* Badges */
 .badge {
-  display: center;
-  margin: 0 2pc 1rem 2pc; /* centré au-dessus du titre */
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
   font-weight: bold;
