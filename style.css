@@ -33,6 +33,7 @@ html {
   src: url('fonts/Mutiara Calligraphy Font.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,6 +41,7 @@ html {
   src: url('fonts/Neuropol X Rg.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* --- RESET --- */
@@ -55,6 +57,8 @@ body {
   color: #f5e6d3;
   line-height: 1.6;
   font-family: 'Neuropol X', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* --- HEADER --- */
@@ -368,11 +372,40 @@ section p {
 }
 
 .offer-price {
-  margin-bottom: 1rem;
-  color: #e0a65a;
-  font-size: 1.15rem;
-  font-weight: bold;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0 auto 1.25rem;
+  padding: 0.8rem 0 1rem;
+  border-top: 1px solid rgba(240, 216, 168, 0.45);
+  border-bottom: 1px solid rgba(240, 216, 168, 0.45);
+  color: #f0d8a8;
+  line-height: 1;
   text-align: center;
+}
+
+.offer-price small {
+  align-self: center;
+  color: #d8c9b3;
+  font-family: 'Neuropol X', sans-serif;
+  font-size: 0.7rem;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+.offer-price strong {
+  color: #f0b35f;
+  font-family: 'Neuropol X', sans-serif;
+  font-size: 1.65rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.offer-price span {
+  color: #d8c9b3;
+  font-family: 'Neuropol X', sans-serif;
+  font-size: 0.75rem;
 }
 
 /* Listes */
@@ -393,13 +426,19 @@ section p {
   max-width: 700px;
   margin: 0 auto;
   padding: 1.25rem;
-  border: 1px solid #c97b36;
+  border: 2px solid #c97b36;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(30, 26, 23, 0.85);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .pricing-list p {
   margin: 0.5rem auto;
+  color: #fff8ec;
+}
+
+.pricing-list strong {
+  color: #f0b35f;
 }
 
 .quote-note {
