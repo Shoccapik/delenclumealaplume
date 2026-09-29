@@ -70,7 +70,7 @@ header {
 
   display: flex;              /* permet de mettre logo + titre sur une ligne */
   align-items: center;        /* aligne verticalement */
-  justify-content: center;    /* centre le tout */
+  justify-content: space-between; /* place le contenu aux extrémités */
   gap: 1rem;                  /* espace entre logo et titre */
 }
 
@@ -83,25 +83,37 @@ header {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 
 /* Logo fixé à gauche */
 .logo {
   flex-shrink: 0; /* empêche le logo de se réduire */
-  margin-right: 2rem;
+  order: 2;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #c97b36;
+  background-color: #2a1e1b !important;
+  background: #6d3d27;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
 }
 
 .logo img {
-  height: 175px;
-  width: auto;
-  border-radius: 15px;
-  border: 2px solid #c97b36;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Bloc titre + navigation */
 .header-content {
+  order: 1;
   flex: 1; /* prend toute la place disponible */
   display: flex;
   flex-direction: column;
@@ -235,14 +247,14 @@ section p {
 
 .about-portrait {
   margin: 2.5rem auto 0;
-  max-width: 240px;
+  max-width: min(240px, 80vw);
   text-align: center;
 }
 
 .about-portrait-frame {
   position: relative;
-  width: 210px;
-  height: 210px;
+  width: min(210px, 72vw);
+  height: min(210px, 72vw);
   margin: 0 auto 1rem;
   border: 3px solid #c97b36;
   border-radius: 50%;
@@ -251,13 +263,12 @@ section p {
 }
 
 .about-portrait-frame img {
-  position: absolute;
-  width: 260px;
-  max-width: none;
-  height: auto;
-  top: calc(50% + 24px);
-  left: calc(50% - 24px);
-  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: none;
 }
 
 .about-portrait figcaption {
@@ -657,13 +668,16 @@ form button {
 
   .logo {
     margin-right: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
   }
 
   .logo img {
-    width: 76px;
-    height: 76px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 0;
   }
 
   .header-content {
