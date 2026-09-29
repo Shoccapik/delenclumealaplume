@@ -68,36 +68,25 @@ header {
   padding: 1.5rem 2rem;
   border-bottom: 2px solid #c97b36;
 
-  display: flex;              /* permet de mettre logo + titre sur une ligne */
-  align-items: center;        /* aligne verticalement */
-  justify-content: space-between; /* place le contenu aux extrémités */
-  gap: 1rem;                  /* espace entre logo et titre */
-}
-
-/* Logo */
-/* --- HEADER --- */
-header {
-  background: rgba(30, 20, 15, 0.9);
-  padding: 1.5rem 2rem;
-  border-bottom: 2px solid #c97b36;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   position: relative;
 }
 
 /* Logo fixé à gauche */
 .logo {
-  flex-shrink: 0; /* empêche le logo de se réduire */
-  order: 2;
+  flex-shrink: 0;
+  order: 1;
+  margin-left: auto;
   width: 210px;
   height: 210px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #c97b36;
-  background-color: #2a1e1b !important;
-  background: #6d3d27;
+  background-color: #4d2b1f !important;
+  background: #4d2b1f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +102,7 @@ header {
 
 /* Bloc titre + navigation */
 .header-content {
-  order: 1;
+  order: 2;
   flex: 1; /* prend toute la place disponible */
   display: flex;
   flex-direction: column;
